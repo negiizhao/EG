@@ -1330,7 +1330,7 @@ lemma VecND.neg_toProj (v : VecND) : (-v).toProj = v.toProj := by
   exact ⟨-1, by simp⟩
 
 @[simp]
-lemma Dir.toProj_neg (d : Dir) : (↑(-d) : Proj) = (d : Proj) :=
+lemma Dir.neg_toProj (d : Dir) : (-d).toProj = d.toProj :=
   d.ind fun v ↦ by rw [← VecND.neg_toDir, VecND.toDir_toProj, VecND.toDir_toProj, VecND.neg_toProj]
 
 theorem Vec.det_eq_zero_iff_eq_smul_right {u v : Vec} : Vec.det u v = 0 ↔ v = 0 ∨ (∃ (t : ℝ), u = t • v) := by
